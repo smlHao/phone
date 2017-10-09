@@ -32,7 +32,7 @@ public class PhoneValidController {
     public String verifyPhoneNoExists(HttpServletResponse response, @PathVariable("phone") String phone) {
         response.setContentType("application/json;charset=UTF-8");
         Map<String, Object> map = new HashMap<String, Object>();
-        logger.info("收到请求参数:");
+        logger.info("收到请求参数:"+phone);
         if (!isPhone(phone)) {
             map.put("msg", "手机号格式不正确");
         } else {
